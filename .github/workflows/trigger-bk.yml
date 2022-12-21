@@ -2,7 +2,7 @@ name: GHA Triggers BK Builds
 run-name: ${{ github.actor }} is testing out GitHub Actions triggering BK 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Trigger-BK:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
