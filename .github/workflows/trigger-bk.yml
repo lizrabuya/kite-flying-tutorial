@@ -13,3 +13,4 @@ jobs:
           PIPELINE: "lizette-buildkite-test/buildkite-exercises"
           BRANCH: "main"
           MESSAGE:  ":github: Triggered from a GitHub Action"
+          COMMIT: HEAD
