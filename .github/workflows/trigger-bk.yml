@@ -6,3 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Trigger a Buildkite Build
+        uses: "buildkite/trigger-pipeline-action@v1.2.0"
