@@ -32,10 +32,10 @@ jobs:
       - name: Test BK_API_TOKEN
         env: 
           CUSTOM_ACCESS_TOKEN: ${{ secrets.BK_API_TOKEN }}
-        run: echo "This is the token ->  $env:CUSTOM_ACCESS_TOKEN" 
+        run: echo "This is the token ->  $CUSTOM_ACCESS_TOKEN" 
       - name: Verify BK_API_TOKEN
         env: 
           CUSTOM_ACCESS_TOKEN: ${{ secrets.BK_API_TOKEN }}      
         run: |
-          curl -H "Authorization: Bearer $env:CUSTOM_ACCESS_TOKEN" "https://api.buildkite.com/v2/access-token"
+          curl -H "Authorization: Bearer $CUSTOM_ACCESS_TOKEN" "https://api.buildkite.com/v2/access-token"
       
