@@ -10,7 +10,7 @@ jobs:
         uses: "buildkite/trigger-pipeline-action@v1.3.0"
         env:
           BUILDKITE_API_ACCESS_TOKEN: ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          PIPELINE: "lzrbktest/test-gh-actions"
+          PIPELINE: "lzrbktest/trigger-from-gha-demo"
           BRANCH: $(echo ${GITHUB_REF#refs/heads/})
           COMMIT: ${{ github.sha }}
           MESSAGE:  ":github: Triggered from a GitHub Action"
