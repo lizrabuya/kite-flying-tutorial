@@ -43,4 +43,5 @@ jobs:
           TRIGGER_BK_TOKEN: ${{ secrets.TRIGGER_BK_BUILD_TOKEN }}      
         run: |
           curl -H "Authorization: Bearer $TRIGGER_BK_TOKEN" "https://api.buildkite.com/v2/access-token"
-   
+      - name: Commit message
+        run: echo Commit message is ${{ github.event.head_commit.message }}
