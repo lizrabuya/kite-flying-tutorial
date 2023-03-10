@@ -1,0 +1,8 @@
+{
+  "name": "Triggers BK Builds",
+  "description": "Triggers BK Builds workflow.",
+  "iconName": "buildkite",
+  "categories": [
+      "continuous-integration"
+  ] 
+}
