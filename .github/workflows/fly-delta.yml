@@ -11,4 +11,4 @@ jobs:
           PIPELINE: "lzrbktest/more-pipelines-tests"
           BRANCH: master
           COMMIT: HEAD
-          MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜  "
+          MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜 ${{ github.event.head_commit.message }}  "
