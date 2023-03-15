@@ -13,11 +13,11 @@ jobs:
           PIPELINE: "lzrbktest/more-pipelines-tests"
           BRANCH: master
           COMMIT: HEAD
-          MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜 ${{ github.event.head_commit.message }}  "  
+          MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜 "  
       - name: Trigger a Buildkite Build
         uses: "buildkite/trigger-pipeline-action@v1.3.0"
         env:
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
           BRANCH: ${{ github.ref }}
           COMMIT: ${{ github.sha }}
-          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA: ${{ github.event.head_commit.message }} "
+          MESSAGE:  ":buildkite::github: 🚀🚀🚀 "
