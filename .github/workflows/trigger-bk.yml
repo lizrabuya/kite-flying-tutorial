@@ -13,5 +13,5 @@ jobs:
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
           BRANCH: main
           COMMIT: ${{ github.sha }}
-          MESSAGE:  ":buildkite: :github: 🚀🚀🚀 Triggered from GHA: ${{ github.event.head_commit.message }} "
+          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA: ${{ github.event.head_commit.message }} "
 
