@@ -1,7 +1,7 @@
 name: Flying Delta
 on: [push]
 env:
-    BUILDKITE_API_ACCESS_TOKEN: "no-token"
+    BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
 
 jobs:
   Fly-Delta:
