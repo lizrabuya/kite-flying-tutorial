@@ -15,7 +15,7 @@ jobs:
           COMMIT: HEAD
           MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜 Using buildkite/trigger-pipeline-action@v1.4.0: ${{ github.event.head_commit.message }}  "  
       - name: Trigger a Buildkite Build
-        uses: "buildkite/trigger-pipeline-action@vpr-33-review"
+        uses: "buildkite/trigger-pipeline-action@pr-33-review"
         env:
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
           BRANCH: ${{ github.ref }}
