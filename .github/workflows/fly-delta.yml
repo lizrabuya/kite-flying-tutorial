@@ -15,9 +15,10 @@ jobs:
           COMMIT: HEAD
           MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜 Using buildkite/trigger-pipeline-action@v1.4.0: ${{ github.event.head_commit.message }}  "  
       - name: Trigger a Buildkite Build
-        uses: "buildkite/trigger-pipeline-action@v1.3.0"
+        uses: "buildkite/trigger-pipeline-action@vpr-33-review"
         env:
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
           BRANCH: ${{ github.ref }}
           COMMIT: ${{ github.sha }}
-          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA: ${{ github.event.head_commit.message }}  "
+          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA: ${{ github.event.head_commit.message }}"
+          BUILD_META_DATA: '{"PIPELINE-TRIGGER-SRC": "trigger-pipeline-action"}'
