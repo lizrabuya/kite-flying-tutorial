@@ -1,23 +1,13 @@
 name: Flying Delta
 on: [push]
-env:
-    BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-
 jobs:
   Fly-Delta:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Buildkite Pipeline
-        uses: buildkite/trigger-pipeline-action@pr-33-review
-        env:
-          PIPELINE: "lzrbktest/more-pipelines-tests"
-          BRANCH: master
-          COMMIT: HEAD
-          MESSAGE:  ":buildkite:💛💚💙💜 :github: 💛💚💙💜 Using buildkite/trigger-pipeline-action@pr-33-review: ${{ github.event.head_commit.message }}  " 
-          BUILD_META_DATA: '{"PIPELINE-TRIGGER-SRC": "trigger-pipeline-action"}'
       - name: Trigger a Buildkite Build
-        uses: "buildkite/trigger-pipeline-action@v1.4.0"
+        uses: buildkite/trigger-pipeline-action@configure-args
         env:
+          BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
           BRANCH: ${{ github.ref }}
           COMMIT: ${{ github.sha }}
