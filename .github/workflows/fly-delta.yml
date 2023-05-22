@@ -4,8 +4,8 @@ jobs:
   Fly-Delta:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger a Buildkite Build
-        uses: buildkite/trigger-pipeline-action@v1.5.0
+      - name: Trigger a Buildkite Build using ENV VARS
+        uses: buildkite/trigger-pipeline-action@configure-args
         env:
           BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
