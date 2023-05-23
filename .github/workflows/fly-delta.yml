@@ -25,14 +25,15 @@ jobs:
           ignore-pipeline-branch-filter: true
       - name: Trigger a Buildkite Build using both Env vars and Input args
         uses: buildkite/trigger-pipeline-action@feature/support-action-inputs
-        env:
-          BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          BRANCH: ${{ github.ref }}
-          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Used ENV var MESSAGE: ${{ github.event.head_commit.message }}"
-          BUILD_ENV_VARS:  '{"TRIGGERED_FROM_GHA": "true"}'
         with:
           pipeline: "lzrbktest/trigger-from-gha-demo"      
           commit: ${{ github.sha }}
           message:  ":buildkite::github: 🚀🚀🚀 Used Input args message: ${{ github.event.head_commit.message }}"      
           build-meta-data: '{"FRALALA": "LALA"}'
           ignore-pipeline-branch-filter: true
+          build-env-vars: '{"ENV_VAR_FROM_INPUT": "true"}'
+        env:
+          BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
+          BRANCH: ${{ github.ref }}
+          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Used ENV var MESSAGE: ${{ github.event.head_commit.message }}"
+          BUILD_ENV_VARS:  '{"ENV_VAR_DEF": "true"}'
