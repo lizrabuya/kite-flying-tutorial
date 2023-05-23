@@ -16,9 +16,8 @@ jobs:
         uses: buildkite/trigger-pipeline-action@configure-args
         with:
           buildkite_token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          pipeline: "lzrbktest/trigger-from-gha-demo"        
-        env:
-          BRANCH: ${{ github.ref }}
-          COMMIT: ${{ github.sha }}
-          MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA using Input ARgs: ${{ github.event.head_commit.message }}"      
+          pipeline: "lzrbktest/trigger-from-gha-demo"      
+          branch: ${{ github.ref }}
+          commit: ${{ github.sha }}
+          message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA using Input ARgs: ${{ github.event.head_commit.message }}"      
           
