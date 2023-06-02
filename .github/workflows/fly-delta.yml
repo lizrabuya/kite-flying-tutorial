@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger a Buildkite Build using ENV VARS
-        uses: buildkite/trigger-pipeline-action@feature/support-action-inputs
+        uses: buildkite/trigger-pipeline-action@v1.6.0
         env:
           BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
           PIPELINE: "lzrbktest/trigger-from-gha-demo"
@@ -13,7 +13,7 @@ jobs:
           COMMIT: ${{ github.sha }}
           MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA using ENV Vars: ${{ github.event.head_commit.message }}"
       - name: Trigger a Buildkite Build using Input args
-        uses: buildkite/trigger-pipeline-action@feature/support-action-inputs
+        uses: buildkite/trigger-pipeline-action@v1.6.0
         with:
           buildkite-token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
           pipeline: "lzrbktest/trigger-from-gha-demo"      
@@ -24,7 +24,7 @@ jobs:
           build-meta-data: '{"FOO": "bar"}'
           ignore-pipeline-branch-filter: true
       - name: Trigger a Buildkite Build using both Env vars and Input args
-        uses: buildkite/trigger-pipeline-action@feature/support-action-inputs
+        uses: buildkite/trigger-pipeline-action@v1.6.0
         with:
           pipeline: "lzrbktest/trigger-from-gha-demo"      
           commit: ${{ github.sha }}
