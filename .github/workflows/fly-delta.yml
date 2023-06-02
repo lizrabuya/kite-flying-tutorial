@@ -8,7 +8,7 @@ jobs:
         uses: buildkite/trigger-pipeline-action@v1.6.0
         env:
           BUILDKITE_API_ACCESS_TOKEN:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          PIPELINE: "lzrbktest/trigger-from-gha-demo"
+          PIPELINE: "lzrbkorg/trigger-from-gha-demo"
           BRANCH: ${{ github.ref }}
           COMMIT: ${{ github.sha }}
           MESSAGE:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA using ENV Vars: ${{ github.event.head_commit.message }}"
@@ -16,7 +16,7 @@ jobs:
         uses: buildkite/trigger-pipeline-action@v1.6.0
         with:
           buildkite-token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          pipeline: "lzrbktest/trigger-from-gha-demo"      
+          pipeline: "lzrbkorg/trigger-from-gha-demo"      
           branch: ${{ github.ref }}
           commit: ${{ github.sha }}
           message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA using Input args: ${{ github.event.head_commit.message }}"      
@@ -26,7 +26,7 @@ jobs:
       - name: Trigger a Buildkite Build using both Env vars and Input args
         uses: buildkite/trigger-pipeline-action@v1.6.0
         with:
-          pipeline: "lzrbktest/trigger-from-gha-demo"      
+          pipeline: "lzrbkorg/trigger-from-gha-demo"      
           commit: ${{ github.sha }}
           message:  ":buildkite::github: 🚀🚀🚀 Used Input args message: ${{ github.event.head_commit.message }}"      
           build-meta-data: '{"FRALALA": "LALA"}'
