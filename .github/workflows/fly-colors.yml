@@ -1,7 +1,6 @@
 name: Pull Request Workflow
-on:
-  pull_request:
-    types: [ assigned, opened, synchronize, reopened ]
+on: pull_request 
+
 jobs:
   Colorful-Actions:
     runs-on: ubuntu-latest
