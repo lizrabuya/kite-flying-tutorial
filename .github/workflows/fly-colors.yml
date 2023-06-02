@@ -1,0 +1,18 @@
+name: Pull Request Workflow
+on: pull_request 
+
+jobs:
+  Colorful-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger a Buildkite Build on PR workflow
+        uses: buildkite/trigger-pipeline-action@v1.6.0
+        with:
+          buildkite-token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
+          pipeline: "lzrbkorg/trigger-from-gha-demo"      
+          branch: ${{ github.ref }}
+          commit: ${{ github.sha }}
+          message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On Pull Request"      
+          build-env-vars: '{"TRIGGERED_FROM_GHA": "true"}'
+          build-meta-data: '{"TRIGGERED_FROM_PR": "true"}'
+          ignore-pipeline-branch-filter: true     
