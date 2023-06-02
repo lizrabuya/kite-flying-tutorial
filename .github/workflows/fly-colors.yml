@@ -12,7 +12,7 @@ jobs:
           pipeline: "lzrbkorg/trigger-from-gha-demo"      
           branch: ${{ github.ref }}
           commit: ${{ github.sha }}
-          message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On Pull Request: $(git show -s --format=%s)"      
+          message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On Pull Request"      
           build-env-vars: '{"TRIGGERED_FROM_GHA": "true"}'
           build-meta-data: '{"TRIGGERED_FROM_PR": "true"}'
           ignore-pipeline-branch-filter: true     
