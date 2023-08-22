@@ -29,7 +29,7 @@ jobs:
           pipeline: "lzrbkorg/trigger-from-gha-demo"      
           commit: ${{ github.sha }}
           message:  ":buildkite::github: 🚀🚀🚀 Used Input args message: ${{ github.event.head_commit.message }}"      
-          build-meta-data: '{"FRALALA": "LALA"}'
+          build-meta-data: '{"FRALALA": "LALA LA LA"}'
           ignore-pipeline-branch-filter: true
           build-env-vars: '{"ENV_VAR_FROM_INPUT": "true"}'
         env:
