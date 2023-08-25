@@ -9,7 +9,7 @@ jobs:
         uses: buildkite/trigger-pipeline-action@v1.6.0
         with:
           buildkite-token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          pipeline: "lzrbkorg/trigger-from-gha-demo"      
+          pipeline: "lzrinc/experimental-pipeline"      
           branch: ${{ github.ref }}
           commit: ${{ github.sha }}
           message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On Pull Request"      
