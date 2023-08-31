@@ -10,8 +10,8 @@ jobs:
         with:
           buildkite-token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
           pipeline: "lzrinc/experimental-pipeline"      
-          branch: ${{ github.ref }}
-          commit: ${{ github.sha }}
+          branch: master
+          commit: HEAD
           message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On $GITHUB_EVENT_NAME"      
           build-env-vars: '{"TRIGGERED_FROM_GHA": "true"}'
           build-meta-data: '{"TRIGGERED_FROM_PR": "true"}'
