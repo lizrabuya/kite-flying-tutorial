@@ -2,7 +2,7 @@ name: Test Workflow
 on: push
 
 jobs:
-  Colorful-Actions:
+  Trigger-Pipeline-Action-v1-6-0:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger a Buildkite Build on Push using v1.6.0
@@ -16,6 +16,9 @@ jobs:
           build-env-vars: '{"TRIGGERED_FROM_GHA": "true", "TPA_VERSION: "v1.6.0"}'
           build-meta-data: '{"TRIGGERED_FROM_PR": "true"}'
           ignore-pipeline-branch-filter: true      
+  Trigger-Pipeline-Action-v2-0-0:
+    runs-on: ubuntu-latest   
+    steps:
       - name: Trigger a Buildkite Build on Push using v2.0.0
         uses: buildkite/trigger-pipeline-action@v2.0.0
         with:
