@@ -28,5 +28,5 @@ jobs:
           commit: HEAD
           message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On $GITHUB_EVENT_NAME"      
           build_env_vars: '{"TRIGGERED_FROM_GHA": "true", "TPA_VERSION": "v2.0.0"}'
-          build-meta-data: '{"TRIGGERED_FROM_PR": "true"}'
-          ignore-pipeline-branch-filter: true     
+          build_meta_data: '{"TRIGGERED_FROM_PR": "true"}'
+          ignore_pipeline_branch_filter: true     
