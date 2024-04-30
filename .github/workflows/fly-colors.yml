@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest   
     steps:
       - name: Trigger a Buildkite Build on Push using latest
-        uses: buildkite/trigger-pipeline-action@latest
+        uses: buildkite/trigger-pipeline-action@a885cbc4fdb52caa6dd34290a625d8cd51537d8a #PR #56
         with:
           buildkite_api_access_token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
           pipeline: "lzrinc/experimental-pipeline"      
