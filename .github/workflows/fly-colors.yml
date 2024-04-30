@@ -23,7 +23,7 @@ jobs:
         uses: buildkite/trigger-pipeline-action@v2.0.0
         with:
           buildkite_api_access_token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          pipeline: "lizrabuya/kite-flying-tutorial"      
+          pipeline: "lzrinc/experimental-pipeline"      
           branch: master
           commit: HEAD
           message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On $GITHUB_EVENT_NAME"      
@@ -37,7 +37,7 @@ jobs:
         uses: buildkite/trigger-pipeline-action@latest
         with:
           buildkite_api_access_token:  ${{ secrets.TRIGGER_BK_BUILD_TOKEN }} 
-          pipeline: "lizrabuya/kite-flying-tutorial"      
+          pipeline: "lzrinc/experimental-pipeline"      
           branch: master
           commit: HEAD
           message:  ":buildkite::github: 🚀🚀🚀 Triggered from GHA On $GITHUB_EVENT_NAME"      
