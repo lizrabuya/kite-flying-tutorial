@@ -1,0 +1,5 @@
+#!/bin/bash
+ 
+set -e
+echo "+++ This is a repository hook (post-command)"
+echo "The step finished with this status: " $BUILDKITE_COMMAND_EXIT_STATUS
