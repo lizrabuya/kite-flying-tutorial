@@ -1,5 +1,5 @@
 set -e
 echo "Checking for running, failing, and blocked builds..."
 echo "Fetching the secret..."
-echo $1
-curl -H 'Authorization: Bearer $1' -X GET 'https://api.buildkite.com/v2/organizations/lzrinc/pipelines/trigger-pipeline-action-integration-test/builds?state=passed' 
+TOKEN=$1
+echo "$(curl -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X GET 'https://api.buildkite.com/v2/organizations/lzrinc/pipelines/trigger-pipeline-action-integration-test/builds?state=passed'  | jq '.[].web_url')"
