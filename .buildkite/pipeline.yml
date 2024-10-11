@@ -11,5 +11,3 @@ steps:
       fi 
   - label: ":pipeline:get meta-data"
     command: echo "$$(buildkite-agent meta-data get "test")"    
-  - label: "check builds"
-    command: source src/request.sh TEST123
