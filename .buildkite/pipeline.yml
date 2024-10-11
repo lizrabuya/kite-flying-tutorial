@@ -1,0 +1,15 @@
+steps: 
+  - label: ":partyparrot:" 
+    command: buildkite-agent meta-data set "test" "dummy"
+    #command: echo same step $$(buildkite-agent meta-data get "test")  <-- does not work?
+  - label: ":pipeline:test meta-data"
+    command: |
+      if [ $(buildkite-agent meta-data exists "test") ]; then
+        echo "it does exists"
+      else
+        echo "it does not exists"
+      fi 
+  - label: ":pipeline:get meta-data"
+    command: echo "$$(buildkite-agent meta-data get "test")"    
+  - label: "check builds"
+    command: source src/request.sh TEST123
